@@ -1,0 +1,37 @@
+#container {
+
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+#timer {
+  color: #f00;
+  font-size: 50px;
+  margin: 10px auto;
+  border: 5px solid red;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+#time {
+  margin-top: 60px;
+  z-index: 1;
+  position: relative;
+}
+
+#filler {
+  background: #ddffcc;
+  height: 0px;
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+}
