@@ -70,9 +70,10 @@ body {
 .todoapp {
   background: #fff;
   padding: 13px;
-  margin: 0px 0 10px 0;
+  margin: 130px 0 40px 0;
   position: relative;
   border-radius: 10px;
+  box-shadow: 0 0 13px rgba(0, 0, 0, 0.2);
 }
 
 .todoapp input::-webkit-input-placeholder {

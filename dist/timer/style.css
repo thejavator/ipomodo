@@ -1,37 +1,420 @@
-#container {
+/*
+* {
+   border: 1px dashed rgba(255, 127, 255, 0.2) !important;
+}
+*/
 
-  margin: 20px auto;
-  padding: 20px;
+html {
+  background-color: #191919;
+  min-height: 100%;
+  margin: 0px 15px;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: medium;
+  color: #999;
+  background-color: inherit;
+  margin: 8px 20px 8px;
+  position: flex;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: 701px) {
+  .row {
+    flex-direction: row;
+  }
+
+  /* not using bootstrap columns because they don't work with flex */
+  .column+.column {
+    margin-left: 30px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+
+/* left side: */
+
+#left {
+  height: 100%;
+  max-width: 400px;
+}
+
+p {
+  font-style: italic;
+  text-align: justify;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #333;
+}
+
+a {
+  color: #999;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #eee;
+}
+
+form {
+  margin-top: 30px;
+}
+
+
+
+hr.gradient {
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(to right, #222, #191919);
+  border: none;
+  margin: 8px 0px;
+}
+
+
+label {
+  font-weight: normal;
+}
+
+.group-label {
+  font-weight: 700;
+  text-align: left;
+  width: 10ch;
+  display: inline-block;
+  height: 100%;
+  vertical-align: top;
+}
+
+.group-col {
+  display: inline-block;
+}
+
+.input-number {
+  width: 40px;
+  background: none;
+  border: 1px solid #333333;
+  border-left: 0px;
+  border-right: 0px;
+  padding: 0px;
+  color: inherit;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.btn-rocker {
+  background: #333333;
+  width: 30px;
+  height: 25px;
+  color: white;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+.btn-rocker.left {
+  border-radius: 12px 0px 0px 12px;
+}
+
+.btn-rocker.right {
+  border-radius: 0px 12px 12px 0px;
+}
+
+abbr {
+  text-decoration: none;
+  text-align: center;
+  border: 1px solid #999;
+  width: 1.5em;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* all other input related stuff is at the bottom */
+
+.note {
+  border: 1px #333 dotted;
+  padding: 8px 16px;
+  margin: 12px 0px;
+  border-radius: 8px;
+  font-style: italic;
+  font-size: small;
+}
+
+
+/* right side: */
+
+#right {
+  max-width: 600px;
+}
+
+
+/* svg */
+
+path {
+  fill: none;
+  stroke-width: 3px;
+}
+
+path.work {
+  stroke: #662626;
+}
+
+path.work.orange-blue {
+  stroke: #884f26;
+}
+
+path.break {
+  stroke: #133313;
+}
+
+path.break.orange-blue {
+  stroke: #202f33;
+}
+
+#pomodoro {
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 600px;
+  max-height: 600px;
+  position: relative;
+}
+
+#inner {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
   text-align: center;
 }
 
 #timer {
-  color: #f00;
-  font-size: 50px;
-  margin: 10px auto;
-  border: 5px solid red;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#timer-display {
+  font-size: 3em;
+}
+
+.display-segment {
+  width: 1ch;
+  display: inline-block;
+}
+
+.btn-icon {
+  background: none;
+  border: 1px none;
+  color: white;
+  font-size: 3em;
+  width: 1.5em;
+}
+
+.btn-icon:focus {
+  border: 1px #662626 solid;
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+}
+
+.btn-icon.orange-blue:focus {
+  border-color: #884400;
+}
+
+.btn-icon.orange-blue {
+  color: #884400;
+}
+
+.btn-icon:before {
+  font-family: FontAwesome;
+}
+
+#btn-play:before,
+#btn-start:before {
+  content: "\f144";
+  /* play-circle */
+}
+
+#btn-pause:before {
+  content: "\f28b";
+}
+
+#btn-stop:before {
+  content: "\f28d";
+  /* stop-circle */
+}
+
+.invisible {
+  display: none;
+}
+
+/* the element still occupies the same space, 
+   but is otherwise not visible */
+.hidden {
+  visibility: hidden;
+}
+
+
+/* (hopefully) improve usability for disabled users */
+
+input:focus,
+button:focus {
+  border: 1px solid #999;
+  outline: none;
+}
+
+input,
+button {
+  border: 1px none;
+}
+
+
+/* you're gonna look sooo pretty */
+
+input[type=checkbox] {
+  /* This hides the actual checkbox from view, 
+      while it is still focusable */
+  position: fixed;
+  left: -1000px;
+}
+
+input+label {
+  padding-right: 1em;
+  cursor: pointer;
   user-select: none;
-  cursor: default;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
-#time {
-  margin-top: 60px;
-  z-index: 1;
-  position: relative;
+input[type=checkbox]+label:before {
+  display: inline-block;
+  color: #999;
+  content: "\f00d";
+  /* cross, times */
+  cursor: pointer;
+  font-family: FontAwesome;
+  font-size: 1.3em;
+  margin-right: 4px;
+  min-width: 1em;
+  vertical-align: middle;
 }
 
-#filler {
-  background: #ddffcc;
-  height: 0px;
-  width: 200px;
-  position: absolute;
-  bottom: 0;
+input[type=checkbox]:checked+label:before {
+  content: "\f00c";
+  /* checkmark */
+}
+
+
+/* indicate when an offscreen checkbox is focused: */
+input[type=checkbox]:focus+label:before {
+  outline: 1px solid #999;
+}
+
+input[type=range].binary-slider {
+  width: 48px;
+}
+
+input[type=range]#volume-slider {
+  width: 110px;
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 0px 0;
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  background-color: transparent;
+  border-radius: 11px;
+}
+
+input[type=range]::-moz-range-track {
+  height: 22px;
+  cursor: pointer;
+  background: #333;
+  border-radius: 11px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: #999;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 22px;
+  cursor: pointer;
+  background: #333;
+  border-radius: 11px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 22px;
+  width: 22px;
+  border-radius: 11px;
+  background: #999;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: 0px;
+}
+
+input[type=range]::-ms-track {
+  height: 22px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #333;
+  border-radius: 11px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #333;
+  border-radius: 11px;
+}
+
+input[type=range]::-ms-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+  background: #999;
+  cursor: pointer;
+}
+
+button#btn-volume-test {
+  vertical-align: middle;
+  padding: 4px;
+  background-color: #333;
+  color: #999;
+  border-radius: 8px;
+}
+
+button#btn-volume-test:hover {
+  background-color: #444;
 }
