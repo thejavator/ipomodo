@@ -189,7 +189,6 @@ function app() {
 
     // preferences:
 
-    colorSchemeSlider = document.getElementById('color-scheme-slider'),
 
     workTimeInput = document.getElementById('work-time'),
     workTimePlus1 = document.getElementById('work-time-plus1'),
@@ -213,18 +212,7 @@ function app() {
     btnVolumeTest = document.getElementById('btn-volume-test');
 
 
-  //-- color scheme setup --
-  var currentScheme = 0;
-  var colorSchemes = ['red-green', 'orange-blue'];
 
-  function changeColorScheme(oldScheme, newScheme) {
-    // get all elements with the oldScheme class:
-    var elems = Array.from(document.querySelectorAll('.' + oldScheme));
-    elems.forEach(function (elem) {
-      // replace oldScheme with newScheme
-      removeClass(elem, oldScheme, newScheme);
-    });
-  }
 
   btnVolumeTest.onclick = function () {
     audioWork.load(); // be kind, rewind
@@ -287,7 +275,6 @@ function app() {
     worktime: 25,
     breaktime: 5,
     pomodori: 4,
-    colorScheme: 0,
     playSound: true,
     systemNotification: false,
     volume: Math.floor(audioBreak.volume * 100)
@@ -313,13 +300,7 @@ function app() {
        console.log('prefs:\n ' + JSON.stringify(localPrefs.prefs));
     },*/
     prefs: {
-      colorScheme: {
-        value: colorSchemeSlider, // element or selector repesenting a preference
-        change: function (val, change) { // side effects of preference change
-          changeColorScheme(colorSchemes[currentScheme], colorSchemes[val]);
-          currentScheme = val;
-        }
-      },
+
       worktime: {
         value: workTimeInput,
         change: function (work, change) {

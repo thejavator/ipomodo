@@ -122,7 +122,7 @@ path.break.orange-blue {
 }
 
 .btn-icon:focus {
-  border: 1px #662626 solid;
+  color: black;
   border-radius: 50%;
 }
 
