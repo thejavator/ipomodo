@@ -36,7 +36,7 @@ var filters = {
 };
 
 
-var app = new Vue({
+var todoapp = new Vue({
   data: {
     todos: todoStorage.fetch(),
     newTodo: "",
@@ -151,10 +151,10 @@ var app = new Vue({
 function onHashChange() {
   var visibility = window.location.hash.replace(/#\/?/, "");
   if (filters[visibility]) {
-    app.visibility = visibility;
+    todoapp.visibility = visibility;
   } else {
     window.location.hash = "";
-    app.visibility = "all";
+    todoapp.visibility = "all";
   }
 }
 
@@ -162,4 +162,4 @@ window.addEventListener("hashchange", onHashChange);
 onHashChange();
 
 // mount
-app.$mount(".todoapp");
+todoapp.$mount(".todoapp");
