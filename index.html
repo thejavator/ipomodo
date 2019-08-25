@@ -12,6 +12,17 @@
   <meta name="apple-mobile-web-app-title" content="TODO">
   <meta name="application-name" content="TODO">
   <meta name="msapplication-TileColor" content="#da532c">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="dist/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="dist/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="dist/icon/favicon-16x16.png">
+  <link rel="manifest" href="dist/icon/site.webmanifest">
+  <link rel="mask-icon" href="dist/icon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+
+
   <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
   <link rel='stylesheet' href='https://bootswatch.com/3/cosmo/bootstrap.css'>
@@ -25,7 +36,11 @@
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="#">iPomodo</a>
+
+        <a class="navbar-brand" rel="home" href="#" title="iPomodo">
+          iPomodo
+        </a>
+
       </div>
 
       <!--/.navbar-collapse -->
@@ -37,7 +52,7 @@
     <div class="container-fluid">
       <p>This is a simple Pomodoro app.</p>
       <p><a class="btn btn-default btn-sm" target="_blank" href="https://www.wikiwand.com/en/Pomodoro_Technique">Learn
-          more</a></p>
+          more about the technique</a></p>
 
       <div>
         <ol>
@@ -56,7 +71,8 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-push-6">
         <div class="panel panel-default">
-          <div class="panel-heading">Todo</div>
+          <div class="panel-heading"><i class="fa fa-check-circle-o"></i>
+            #TODO</div>
           <div class="panel-body">
             <section class="todoapp">
               <header class="header">
@@ -101,7 +117,8 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-pull-6">
         <div class="panel panel-default">
-          <div class="panel-heading">Timer</div>
+          <div class="panel-heading"><i class="fa fa-clock-o"></i>
+            Timer</div>
           <div class="panel-body timer">
             <div id="pomodoro" class="">
               <svg viewBox="0 0 100 100" xmlns="https://www.w3.org/2000/svg">
@@ -128,7 +145,8 @@
           </div>
         </div>
         <div class="panel panel-default">
-          <div class="panel-heading">Setting</div>
+          <div class="panel-heading"><i class="fa fa-cogs"></i>
+            Setting</div>
           <div class="panel-body">
             <form id="settings" action="javascript:void(0)">
               <div class="form-group">

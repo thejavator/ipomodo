@@ -13,6 +13,10 @@
   border-radius: 0%;
 }
 
+.jumbotron {
+  margin-top: -22px
+}
+
 hr.gradient {
   height: 2px;
   width: 100%;
