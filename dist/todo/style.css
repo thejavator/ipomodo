@@ -1,21 +1,10 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-a,
-button {
-  transition: color .3s ease;
-}
-
 input[type=checkbox],
 a,
 button {
   cursor: pointer;
 }
 
-button {
+.todobutton {
   margin: 0;
   padding: 0;
   border: 0;
@@ -32,17 +21,6 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
-  font-family: 'Noto Sans HK', sans-serif;
-  font-size: 12px;
-  line-height: 1.4em;
-  background: #d5d7de;
-  color: #000;
-  margin: 0 auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
-}
 
 :focus {
   outline: 0;
@@ -70,9 +48,8 @@ body {
 .todoapp {
   background: #fff;
   padding: 13px;
-  margin: 0px 0 10px 0;
   position: relative;
-  border-radius: 10px;
+  border-radius: 0px;
 }
 
 .todoapp input::-webkit-input-placeholder {
@@ -107,7 +84,7 @@ body {
 
 .new-todo {
   padding: 16px 60px 16px 60px;
-  border-radius: 10px;
+  border-radius: 0px;
   border: none;
   background: #efefef;
   transition: background .3s ease;
