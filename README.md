@@ -1,2 +1,2 @@
-# pomodori
-Sample pomodori app
+# iPomodo
+Sample pomodoro app
