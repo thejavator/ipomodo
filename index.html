@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Timer & Todo App">
+  <meta name="description" content="Pomodoro App">
   <meta name="theme-color" content="#000">
   <meta name="apple-mobile-web-app-title" content="TODO">
   <meta name="application-name" content="TODO">
@@ -18,10 +18,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="dist/icon/favicon-16x16.png">
   <link rel="manifest" href="dist/icon/site.webmanifest">
   <link rel="mask-icon" href="dist/icon/safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-
-
 
   <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'>
@@ -30,30 +26,22 @@
 </head>
 
 <body>
-  <!-- partial:index.partial.html -->
   <audio id="audio-break" src="https://a.clyp.it/obco0n3a.mp3"></audio>
   <audio id="audio-work" src="https://a.clyp.it/5tyslehe.mp3"></audio>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-
         <a class="navbar-brand" rel="home" href="#" title="iPomodo">
           iPomodo
         </a>
-
       </div>
-
-      <!--/.navbar-collapse -->
     </div>
   </nav>
-
-  <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
     <div class="container-fluid">
       <p>This is a simple Pomodoro app.</p>
       <p><a class="btn btn-default btn-sm" target="_blank" href="https://www.wikiwand.com/en/Pomodoro_Technique">Learn
           more about the technique</a></p>
-
       <div>
         <ol>
           <li>Decide on the task to be done.</li>
@@ -244,20 +232,23 @@
             </div>
           </div>
         </div>
-
-
-
       </div>
-
     </div>
-
-
   </div>
 
   <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
   <script src="dist/script.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-134450343-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-134450343-2');
+  </script>
 </body>
 
 </html>
