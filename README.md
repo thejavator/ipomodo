@@ -1,2 +1,2 @@
-# iPomodo
+# OneDO
 Sample pomodoro app
